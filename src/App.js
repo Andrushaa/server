@@ -10,11 +10,7 @@ import MyModal from "./components/UI/MyModal/MyModal";
 import axios from "axios";
 
 function App() {
-    const [posts, setPosts] = useState([
-        {id: 1, title: "Javascript", body: 'Description'},
-        {id: 2, title: "html", body: 'Description'},
-        {id: 3, title: "css", body: 'Description'},
-    ])
+    const [posts, setPosts] = useState([])
     const [modal, setModal] = useState(false);
 
     useEffect(() => {
