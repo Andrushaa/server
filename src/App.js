@@ -12,6 +12,7 @@ import axios from "axios";
 function App() {
     const [posts, setPosts] = useState([])
     const [modal, setModal] = useState(false);
+    const [postsLoading, setPostsLoading] = useState(false)
 
     useEffect(() => {
         fetchPosts()
@@ -23,8 +24,12 @@ function App() {
     }
 
     async function fetchPosts() {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
-        setPosts(response.data)
+        setPostsLoading(true)
+        setTimeout( async ()=>{
+            const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+            setPosts(response.data)
+            setPostsLoading(false);
+            }, 1000)
     }
 
     const removePost = (post) => {
@@ -41,13 +46,19 @@ function App() {
               <PostForm create={createPost}/>
           </MyModal>
 
-          {posts.length !== 0
-              ? <PostList remove={removePost} posts={posts} title="Список постов 1"/>
-              : <h1 style={{textAlign: 'center'}}>
+          {postsLoading
+              ? <h1>Загрузка</h1>
+              :
+              posts.length !== 0
+                  ? <PostList remove={removePost} posts={posts} title="Список постов 1"/>
+                  : <h1 style={{textAlign: 'center'}}>
                   Посты не найдены
-                </h1>
+                  </h1>
+
 
           }
+
+
 
       </>
     );
