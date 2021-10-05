@@ -1,16 +1,22 @@
 import './App.css';
-import React from 'react';
-import axios from "axios";
+import React, {useState} from 'react';
+import Api  from "./components/api"
+import PostItem from "./components/postItem";
 
 function App() {
-
-  async function fetchPosts() {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
-    console.log(response.data)
-
-  }
+    const [posts, setPosts] = useState([
+        {id: 1, title: "Javascript", body: 'Description'},
+        {id: 2, title: "html", body: 'Description'},
+        {id: 3, title: "css", body: 'Description'},
+    ])
   return (
-      <button onClick={fetchPosts}>Get Posts</button>
+      <>
+          <h1>Список постов</h1>
+          {posts.map((post) =>
+            <PostItem post={post} key={post.id}/>
+          )}
+      </>
+
   );
 }
 
