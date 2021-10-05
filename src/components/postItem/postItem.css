@@ -1,0 +1,21 @@
+.post {
+    border: 2px green solid;
+    width: 75%;
+    border-radius: 20px;
+    display: block;
+    margin: 5px auto;
+}
+
+.post__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post__btns {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

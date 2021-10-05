@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import Api  from "./components/api"
-import PostItem from "./components/postItem";
+import PostItem from "./components/postItem/postItem";
 import PostList from "./components/postList";
 import MyButton from "./components/UI/button/myButton";
 import MyInput from "./components/UI/input/MyInput";
