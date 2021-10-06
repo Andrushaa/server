@@ -1,9 +1,15 @@
 .post {
     border: 2px green solid;
-    width: 75%;
+    width: 70%;
     border-radius: 20px;
     display: block;
-    margin: 5px auto;
+    margin: 15px auto;
+    transition: 0.5s;
+    padding: 12px 50px;
+}
+
+.post:hover {
+    box-shadow: 0 0 50px #268a79;
 }
 
 .post__content {
@@ -11,9 +17,10 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
-.post__btns {
+.post__btn {
     display: flex;
     justify-content: center;
     flex-direction: column;

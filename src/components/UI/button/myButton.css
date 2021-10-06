@@ -18,6 +18,7 @@
 .MyButton:hover {
     background: linear-gradient(#fc9804, #d39013);
     box-shadow: 0 0 50px #d39013;
+    color: black;
 }
 
 @font-face {
