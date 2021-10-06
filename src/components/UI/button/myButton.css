@@ -1,7 +1,28 @@
 .MyButton {
-    color: yellow;
+    display: block;
+    width: 140px;
+    height: 35px;
+    border-radius: 15px;
+    background: linear-gradient(#259385 100%, #159685 100%);
+    color: white;
+    font-family: MarckScript, serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    line-height: 100%;
+    margin: 10px auto;
+    transition: 0.5s;
     cursor: pointer;
-    width: 100px;
-    height: 20px;
-    background: blue;
 }
+
+.MyButton:hover {
+    background: linear-gradient(#fc9804, #d39013);
+    box-shadow: 0 0 50px #d39013;
+}
+
+@font-face {
+    font-family: MarckScript;
+    src: url("fonts/MarckScript.ttf");
+}
+
+
