@@ -9,6 +9,7 @@
 }
 
 .post:hover {
+    background: rgba(51,75,212, 0.2);
     box-shadow: 0 0 50px #334bd4;
 }
 
@@ -20,10 +21,18 @@
     text-align: center;
 }
 
+.post__name {
+    color: crimson;
+    font-size: 35px;
+    font-family: IndieFlower, serif;
+    font-weight: 700;
+}
+
 .post__email {
     color: red;
-    font-family: Roboto, serif;
+    font-family: Birthstone, serif;
     font-weight: 500;
+    font-size: 30px;
 }
 
 .post__body {
@@ -42,4 +51,14 @@
 @font-face {
     font-family: Roboto;
     src: url("fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: Birthstone;
+    src: url("fonts/Birthstone.ttf");
+}
+
+@font-face {
+    font-family: IndieFlower;
+    src: url("fonts/IndieFlower.ttf");
 }
