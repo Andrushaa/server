@@ -37,7 +37,7 @@ function App() {
       <>
           <MyButton onClick={fetchPosts}>Get posts</MyButton>
           <MyButton onClick={() => setModal(true)}>
-              Создать пост
+              Create a new post
           </MyButton>
           <MyModal visible={modal} setVisible={setModal}>
               <PostForm create={createPost}/>
