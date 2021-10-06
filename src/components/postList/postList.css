@@ -1,0 +1,12 @@
+.MainTitle {
+    color: red;
+    font-family: Akronim, serif;
+    text-align: center;
+    letter-spacing: 7px;
+    font-size: 36px;
+}
+
+@font-face {
+    font-family: Akronim;
+    src: url("fonts/Akronim.ttf");
+}

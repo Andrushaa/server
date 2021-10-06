@@ -26,7 +26,7 @@ function App() {
     async function fetchPosts() {
         setPostsLoading(true)
         setTimeout( async ()=>{
-            const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+            const response = await axios.get('https://jsonplaceholder.typicode.com/comments')
             setPosts(response.data)
             setPostsLoading(false);
             }, 1000)
@@ -50,9 +50,9 @@ function App() {
               ? <h1>Загрузка</h1>
               :
               posts.length !== 0
-                  ? <PostList remove={removePost} posts={posts} title="Список постов 1"/>
+                  ? <PostList remove={removePost} posts={posts} title="List of comments"/>
                   : <h1 style={{textAlign: 'center'}}>
-                  Посты не найдены
+                      No comments found
                   </h1>
 
 
