@@ -5,6 +5,7 @@ import MyButton from "./components/UI/button/myButton";
 import PostForm from "./components/postForm/PostForm";
 import axios from "axios";
 import Modal from "./components/UI/Modal/Modal";
+import Form from "./components/form/form";
 
 function App() {
     const [posts, setPosts] = useState([])
@@ -43,6 +44,7 @@ function App() {
           <Modal active={modalActive} setActive={setModalActive}>
               <PostForm create={createPost}/>
           </Modal>
+          <Form/>
 
           {postsLoading
               ? <h1>Загрузка</h1>
