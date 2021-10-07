@@ -26,8 +26,10 @@
     width: 400px;
     transform: scale(0.5);
     transition: 0.4s all;
+}
 
-
+.modal-content:hover {
+    box-shadow: 0 0 50px #334bd4;
 }
 
 .modal-content.active {
