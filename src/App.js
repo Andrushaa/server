@@ -11,7 +11,7 @@ function App() {
     const [posts, setPosts] = useState([])
     const [modal, setModal] = useState(false);
     const [postsLoading, setPostsLoading] = useState(false)
-    const [modalActive, setModalActive] = useState(true)
+    const [modalActive, setModalActive] = useState(false)
 
     useEffect(() => {
         fetchPosts()
