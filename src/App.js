@@ -3,13 +3,11 @@ import React, {useEffect, useState} from 'react';
 import PostList from "./components/postList/postList";
 import MyButton from "./components/UI/button/myButton";
 import PostForm from "./components/postForm/PostForm";
-import MyModal from "./components/UI/MyModal/MyModal";
 import axios from "axios";
 import Modal from "./components/UI/Modal/Modal";
 
 function App() {
     const [posts, setPosts] = useState([])
-    const [modal, setModal] = useState(false);
     const [postsLoading, setPostsLoading] = useState(false)
     const [modalActive, setModalActive] = useState(false)
 
@@ -19,7 +17,7 @@ function App() {
     
     const createPost = (newPost) => {
         setPosts([...posts, newPost])
-        setModal(false)
+        setModalActive(false)
     }
 
     async function fetchPosts() {
@@ -38,12 +36,7 @@ function App() {
   return (
       <>
           <MyButton onClick={fetchPosts}>Get posts</MyButton>
-          <MyButton onClick={() => setModal(true)}>
-              Create a new post
-          </MyButton>
-          <MyModal visible={modal} setVisible={setModal}>
-              <PostForm create={createPost}/>
-          </MyModal>
+
           <MyButton onClick={() => setModalActive(true)}>
               New modal window
           </MyButton>
@@ -60,9 +53,6 @@ function App() {
                       No comments found
                   </h1>
           }
-
-
-
       </>
     );
 };
