@@ -5,11 +5,13 @@ import MyButton from "./components/UI/button/myButton";
 import PostForm from "./components/postForm/PostForm";
 import MyModal from "./components/UI/MyModal/MyModal";
 import axios from "axios";
+import Modal from "./components/UI/Modal/Modal";
 
 function App() {
     const [posts, setPosts] = useState([])
     const [modal, setModal] = useState(false);
     const [postsLoading, setPostsLoading] = useState(false)
+    const [modalActive, setModalActive] = useState(true)
 
     useEffect(() => {
         fetchPosts()
@@ -42,6 +44,12 @@ function App() {
           <MyModal visible={modal} setVisible={setModal}>
               <PostForm create={createPost}/>
           </MyModal>
+          <MyButton onClick={() => setModalActive(true)}>
+              New modal window
+          </MyButton>
+          <Modal active={modalActive} setActive={setModalActive}>
+              <PostForm create={createPost}/>
+          </Modal>
 
           {postsLoading
               ? <h1>Загрузка</h1>
@@ -51,8 +59,6 @@ function App() {
                   : <h1 style={{textAlign: 'center'}}>
                       No comments found
                   </h1>
-
-
           }
 
 
