@@ -82,7 +82,8 @@ const AddComment = () => {
                     onBlur={e => blurHandler(e)}
                     name='name'
                     type="text"
-                    placeholder='Enter your name...'/>
+                    placeholder='Enter your name...'
+                />
             </p>
 
             <p>
@@ -93,7 +94,8 @@ const AddComment = () => {
                     onBlur={e => blurHandler(e)}
                     name='email'
                     type="text"
-                    placeholder='Enter your email...'/>
+                    placeholder='Enter your email...'
+                />
             </p>
 
            <p>
@@ -104,7 +106,8 @@ const AddComment = () => {
                    onBlur={e => blurHandler(e)}
                    name='comment'
                    type="text"
-                   placeholder='Enter your comment...'/>
+                   placeholder='Enter your comment...'
+               />
            </p>
 
             <button disabled={!formValid} type='submit'>Отправить</button>
