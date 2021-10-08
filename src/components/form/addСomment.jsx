@@ -4,7 +4,7 @@ import MyInput from "../UI/input/MyInput";
 const AddComment = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [comment, setComment] = useState('')
+    const [body, setBody] = useState('')
     const [nameDirty, setNameDirty] = useState(false)
     const [emailDirty, setEmailDirty] = useState(false)
     const [commentDirty, setCommentDirty] = useState(false)
@@ -46,7 +46,7 @@ const AddComment = () => {
     }
 
     const commentHandler = (e) => {
-        setComment(e.target.value)
+        setBody(e.target.value)
         const reComment = /^[a-z0-9_-]{8,21}$/;
 
         if (!reComment.test(String(email).toLowerCase())) {
@@ -102,7 +102,7 @@ const AddComment = () => {
                {(commentDirty && commentError) && <div style={{color: 'red'}}> {commentError}</div>}
                <MyInput
                    onChange={e => commentHandler(e)}
-                   value={comment}
+                   value={body}
                    onBlur={e => blurHandler(e)}
                    name='comment'
                    type="text"
