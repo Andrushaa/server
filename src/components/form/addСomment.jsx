@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import MyInput from "../UI/input/MyInput";
 
 const AddComment = () => {
     const [name, setName] = useState('')
@@ -75,20 +76,36 @@ const AddComment = () => {
             <h1>Добавить комментарий</h1>
             <p>
                 {(nameDirty && nameError) && <div style={{color: 'red'}}>{nameError}</div>}
-                <input onChange={e => nameHandler(e)} value={name} onBlur={e => blurHandler(e)} name='name' type="text" placeholder='Enter your name...'/>
+                <MyInput
+                    onChange={e => nameHandler(e)}
+                    value={name}
+                    onBlur={e => blurHandler(e)}
+                    name='name'
+                    type="text"
+                    placeholder='Enter your name...'/>
             </p>
 
             <p>
                 {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
-                <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} name='email' type="text" placeholder='Enter your email...'/>
+                <MyInput
+                    onChange={e => emailHandler(e)}
+                    value={email}
+                    onBlur={e => blurHandler(e)}
+                    name='email'
+                    type="text"
+                    placeholder='Enter your email...'/>
             </p>
 
            <p>
                {(commentDirty && commentError) && <div style={{color: 'red'}}> {commentError}</div>}
-               <input onChange={e => commentHandler(e)}  value={comment} onBlur={e => blurHandler(e)}  name='comment' type="text" placeholder='Enter your comment...'/>
+               <MyInput
+                   onChange={e => commentHandler(e)}
+                   value={comment}
+                   onBlur={e => blurHandler(e)}
+                   name='comment'
+                   type="text"
+                   placeholder='Enter your comment...'/>
            </p>
-
-
 
             <button disabled={!formValid} type='submit'>Отправить</button>
 
