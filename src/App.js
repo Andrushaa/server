@@ -6,6 +6,7 @@ import PostForm from "./components/postForm/PostForm";
 import axios from "axios";
 import Modal from "./components/UI/Modal/Modal";
 import AddComment from "./components/form/addСomment";
+import Loader from "./components/UI/loader/Loader"
 
 function App() {
     const [posts, setPosts] = useState([])
@@ -47,7 +48,7 @@ function App() {
           <AddComment/>
 
           {postsLoading
-              ? <h1>Загрузка</h1>
+              ? <Loader/>
               :
               posts.length !== 0
                   ? <PostList remove={removePost} posts={posts} title="List of comments"/>
