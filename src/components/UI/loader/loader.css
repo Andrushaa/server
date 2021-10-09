@@ -1,6 +1,7 @@
 .lds-hourglass__wrapper {
     display: flex;
     justify-content: center;
+    margin-top: 35px;
 }
 
 .lds-hourglass {
