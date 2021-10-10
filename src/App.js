@@ -7,11 +7,18 @@ import axios from "axios";
 import Modal from "./components/UI/Modal/Modal";
 import AddComment from "./components/form/addСomment";
 import Loader from "./components/UI/loader/Loader"
+import PostService from "./components/API/PostService";
+import {useFetching} from "./components/hooks/useFetching";
 
 function App() {
     const [posts, setPosts] = useState([])
-    const [postsLoading, setPostsLoading] = useState(false)
+   // const [postsLoading, setPostsLoading] = useState(false)
     const [modalActive, setModalActive] = useState(false)
+    const [fetchPosts, postsLoading, postError] = useFetching(async () => {
+        const posts = await PostService.getAll();
+        setPosts(posts)
+    })
+
 
     useEffect(() => {
         fetchPosts()
@@ -22,14 +29,7 @@ function App() {
         setModalActive(false)
     }
 
-    async function fetchPosts() {
-        setPostsLoading(true)
-        setTimeout( async ()=>{
-            const response = await axios.get('https://jsonplaceholder.typicode.com/comments')
-            setPosts(response.data)
-            setPostsLoading(false);
-            }, 1000)
-    }
+
 
     const removePost = (post) => {
         setPosts(posts.filter(p => p.id !== post.id))
@@ -47,14 +47,13 @@ function App() {
           </Modal>
           <AddComment/>
 
+          {postError &&
+              <h1>Произошла ошибка ${postError}</h1>
+          }
+
           {postsLoading
               ? <Loader/>
-              :
-              posts.length !== 0
-                  ? <PostList remove={removePost} posts={posts} title="List of comments"/>
-                  : <h1 style={{textAlign: 'center'}}>
-                      No comments found
-                  </h1>
+              : <PostList remove={removePost} posts={posts} title="List of comments"/>
           }
       </>
     );
