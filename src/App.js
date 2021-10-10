@@ -76,7 +76,7 @@ function App() {
                   <span
                       onClick={() => changePage(p)}
                       key={p}
-                      className={page ===p ? 'page page__current' : 'page'}
+                      className={page === p ? 'page page__current' : 'page'}
                   >
                       {p}
                   </span>
