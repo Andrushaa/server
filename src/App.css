@@ -29,4 +29,5 @@
 .page__current {
     border: 2px solid orange;
     font-weight: bold;
+    background-color: rgba(255, 128, 0, 0.2);
 }
