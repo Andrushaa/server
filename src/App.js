@@ -40,8 +40,6 @@ function App() {
         setModalActive(false)
     }
 
-
-
     const removePost = (post) => {
         setPosts(posts.filter(p => p.id !== post.id))
     }
@@ -55,12 +53,11 @@ function App() {
           <MyButton onClick={fetchPosts}>Get posts</MyButton>
 
           <MyButton onClick={() => setModalActive(true)}>
-              New modal window
+              Add new comment
           </MyButton>
           <Modal active={modalActive} setActive={setModalActive}>
               <PostForm create={createPost}/>
           </Modal>
-          <AddComment/>
 
           {postError &&
               <h1>Произошла ошибка ${postError}</h1>

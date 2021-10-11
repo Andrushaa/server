@@ -6,10 +6,6 @@
     font-size: 36px;
 }
 
-.PostList-wrapper {
-    height: 2180px;
-}
-
 @font-face {
     font-family: Akronim;
     src: url("fonts/Akronim.ttf");
