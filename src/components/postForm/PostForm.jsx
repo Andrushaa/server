@@ -36,7 +36,7 @@ const PostForm = ({create}) => {
                 type="text"
                 placeholder="Your comment text"
             />
-            <MyButton onClick={addNewPost}>Create a new post</MyButton>
+            <MyButton onClick={addNewPost}>Create a new commit</MyButton>
         </form>
     );
 };
