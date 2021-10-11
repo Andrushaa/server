@@ -65,7 +65,9 @@ function App() {
 
           {postsLoading
               ? <Loader/>
-              : <PostList remove={removePost} posts={posts} title="List of comments"/>
+              : posts.length !== 0
+                  ? <PostList remove={removePost} posts={posts} title="List of comments"/>
+                    :<h1 className='MainTitle'>no comments found</h1>
           }
 
           <div className="page__wrapper">
