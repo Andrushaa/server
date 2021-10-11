@@ -1,5 +1,4 @@
 import axios from "axios";
-//axios - библиотека, чтобы делать запросы к серверу
 
 export default class PostService {
     static async getAll(limit = 10, page = 1) {
